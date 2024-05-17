@@ -1,15 +1,16 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 
 let list = []
 let listId = 1
 
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get('/' , (req,res)=>{
-    res.sendFile(path.join(__dirname , "index.html"));
+    res.sendFile(path.join(__dirname , "/index.html"));
 })
 
 
